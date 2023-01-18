@@ -2,8 +2,6 @@
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
-
-# server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
@@ -59,3 +57,16 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+set :branch, ENV.fetch('branch', 'develop')
+
+role :api, %w[35.153.100.197]
+role :worker, %w[35.153.100.197]
+role :db, %w[35.153.100.197]
+
+namespace :deploy do
+  after :finishing, :restart_sidekiq do
+    on roles(:all) do
+      execute "systemctl --user restart pms-staging-sidekiq.service"
+    end
+  end
+end
