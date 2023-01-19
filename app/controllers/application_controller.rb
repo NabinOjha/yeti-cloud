@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
   def index
-    render json: {message: "working! deployed test rails api to yeti cloud."}, status: :ok
+    render json: {message: "working!"}, status: :ok
   end
 end
