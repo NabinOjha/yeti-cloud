@@ -45,7 +45,6 @@ namespace :deploy do
   desc 'Creating symlink'
   task :symlink do
       on roles(:app) do
-          execute :rm, "-rf /var/www/#{fetch(:application)}/current"
           execute :rm, "-rf /var/www/webroot/ROOT"
           execute :ln, "-s /var/www/#{fetch(:application)}/current /var/www/webroot/ROOT"
       end
