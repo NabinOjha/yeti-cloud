@@ -1,6 +1,5 @@
 # Load DSL and set up stages
 # require 'capistrano/rvm'
-require 'capistrano/postgresql' 
 require "capistrano/setup"
 
 # Include default deployment tasks
@@ -38,3 +37,6 @@ install_plugin Capistrano::SCM::Git
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+
+
+Rake::Task[:staging].invoke
