@@ -8,7 +8,7 @@
    
     role :app, %w{9654-963@gate.yetiapp.cloud}
     role :web, %w{9654-963@gate.yetiapp.cloud}
-    role :db, %w{9670-963@gate.yetiapp.cloud}
+    role :db, %w{9654-963@gate.yetiapp.cloud}
    
     
     # Extended Server Syntax
@@ -17,8 +17,7 @@
     # server list. The second argument is a, or duck-types, Hash and is
     # used to set extended properties on the server.
     
-    server 'gate.yetiapp.cloud', user: '9654-963', roles: %w{web app}, my_property: :my_value
-    server 'gate.yetiapp.cloud', user: '9670-963', roles: %w{db}, my_property: :my_value
+    server 'gate.yetiapp.cloud', user: '9654-963', roles: %w{web app db}, my_property: :my_value
     
     # Custom SSH Options
     # ==================
