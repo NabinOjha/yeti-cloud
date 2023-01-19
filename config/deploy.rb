@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:NabinOjha/yeti-cloud.git'
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 set :branch, "main"
-set :remote_user, 'nginx'
+# set :remote_user, 'nginx'
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, "/var/www/webroot/ROOT"
 
