@@ -6,6 +6,7 @@ set :repo_url, 'git@github.com:NabinOjha/yeti-cloud.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, "main"
 set :remote_user, 'nginx'
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, "/var/www/webroot/ROOT"
@@ -36,7 +37,7 @@ set :pty, true
 
 namespace :deploy do
   desc 'Restart Apache'
-  task :apache do
+  task :nginx do
       on roles(:app) do
           execute :sudo, "service nginx restart"
       end
@@ -48,9 +49,9 @@ namespace :deploy do
           execute :ln, "-s /var/www/#{fetch(:application)}/current /var/www/webroot/ROOT"
       end
   end
-  desc 'Restart Apache and create symlink'
+  desc 'Restart Nginx and create symlink'
   task :restart
   before :restart, :symlink
-  before :restart, :apache
+  before :restart, :nginx
 end
 after 'deploy:publishing', 'deploy:restart'
