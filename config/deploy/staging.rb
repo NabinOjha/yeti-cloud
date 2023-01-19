@@ -8,7 +8,7 @@
    
     role :app, %w{9654-963@gate.yetiapp.cloud}
     role :web, %w{9654-963@gate.yetiapp.cloud}
-    role :db, %w{node9670-yeti-cloud.ktm.yetiappcloud.com}
+    role :db, %w{9670-963@gate.yetiapp.cloud}
    
     
     # Extended Server Syntax
@@ -18,7 +18,7 @@
     # used to set extended properties on the server.
     
     server 'gate.yetiapp.cloud', user: '9654-963', roles: %w{web app}
-    server 'node9670-yeti-cloud.ktm.yetiappcloud.com', user: '9670-963', roles: %w{db}
+    server 'gate.yetiapp.cloud', user: '9670-963', roles: %w{db}
     
     # Custom SSH Options
     # ==================
