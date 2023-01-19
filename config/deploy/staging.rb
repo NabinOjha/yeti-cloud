@@ -4,21 +4,16 @@
     # is considered to be the first unless any hosts have the primary
     # property set.  Don't declare `role :all`, it's a meta role.
 
-
    
-    role :app, %w{9654-963@gate.yetiapp.cloud}
-    role :web, %w{9654-963@gate.yetiapp.cloud}
-    role :db, %w{9670-963@gate.yetiapp.cloud}
-   
+    role :api, %w[9654-963@gate.yetiapp.cloud]
+    role :db, %w[9670-963@gate.yetiapp.cloud]
     
     # Extended Server Syntax
     # ======================
     # This can be used to drop a more detailed server definition into the
     # server list. The second argument is a, or duck-types, Hash and is
     # used to set extended properties on the server.
-    
-    server 'gate.yetiapp.cloud', user: '9654-963', roles: %w{web app}
-    server 'gate.yetiapp.cloud', user: '9670-963', roles: %w{db}
+
     
     # Custom SSH Options
     # ==================

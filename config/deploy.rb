@@ -38,13 +38,13 @@ set :pty, true
 namespace :deploy do
   desc 'Restart nginx'
   task :nginx do
-      on roles(:app) do
+      on roles(:api) do
           execute :sudo, "service nginx restart"
       end
   end
   desc 'Creating symlink'
   task :symlink do
-      on roles(:app) do
+      on roles(:api) do
           execute :rm, "-rf /var/www/webroot/ROOT"
           execute :ln, "-s /var/www/#{fetch(:application)}/current /var/www/webroot/ROOT"
       end
