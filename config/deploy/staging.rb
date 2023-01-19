@@ -5,10 +5,8 @@
     # property set.  Don't declare `role :all`, it's a meta role.
 
 
-   
-    role :api, %w[9654-963@gate.yetiapp.cloud]
-    role :db, %w[9670-963@gate.yetiapp.cloud]
-    
+    role :db, %w{9670-963@gate.yetiapp.cloud}
+    role :api, %w{9654-963@gate.yetiapp.cloud}    
     # Extended Server Syntax
     # ======================
     # This can be used to drop a more detailed server definition into the
