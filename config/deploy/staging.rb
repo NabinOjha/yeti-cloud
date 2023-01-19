@@ -8,6 +8,7 @@
    
     role :app, %w{9654-963@gate.yetiapp.cloud}
     role :web, %w{9654-963@gate.yetiapp.cloud}
+    # role :db, %w{}
    
     
     # Extended Server Syntax

@@ -36,7 +36,7 @@ set :pty, true
 # set :keep_releases, 5
 
 namespace :deploy do
-  desc 'Restart Apache'
+  desc 'Restart nginx'
   task :nginx do
       on roles(:app) do
           execute :sudo, "service nginx restart"
