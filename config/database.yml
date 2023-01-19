@@ -59,6 +59,7 @@ test:
   <<: *default
   database: yeti_app_development
   username: postgres
+  password: postgres
   host: 10.121.5.95
   port: 3022
 
